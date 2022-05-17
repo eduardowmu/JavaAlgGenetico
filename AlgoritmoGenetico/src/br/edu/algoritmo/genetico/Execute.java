@@ -88,6 +88,16 @@ public class Execute
 		produtos.add(new Produto("Banana", 6.0, 4.05));
 		produtos.add(new Produto("Mamão", 11.0, 9.05));
 		
-		produtos.stream().forEach(p -> System.out.println(p.toString()));
+		List espacos = new ArrayList<>();
+		List valores = new ArrayList<>();
+		List nomes = new ArrayList<>();
+		
+		produtos.forEach(p -> addValues(p, espacos, valores, nomes));
+	}
+
+	private static void addValues(Produto p, List espacos, List valores, List nomes)
+	{	espacos.add(p.getEspaco());
+		valores.add(p.getValor());
+		nomes.add(p.getNome());
 	}
 }
